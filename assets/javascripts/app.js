@@ -1,6 +1,9 @@
 //= require ./lib/jquery
+//= require ./lib/backbone
+//= require ./lib/backbone.marionette
 //= require ./lib/d3.v3.min
 //= require ./lib/topojson.v1.min
+
 
 var ready = function() {
   d3.json("uk.json", function(error, uk){
