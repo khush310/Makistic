@@ -1,4 +1,5 @@
 //= require ./lib/jquery
+//= require ./lib/menu
 //= require ./lib/backbone
 //= require ./lib/backbone.marionette
 //= require ./lib/d3.v3.min

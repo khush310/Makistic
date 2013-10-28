@@ -1,66 +1,143 @@
 /*= require_tree .*/
 html
-	height: 100%
+  height: 100%
 body
-	height: 100%
-	margin: 0
-	font-family: "Josefin Sans"
-	#stage
-		height: 100%
-		width: 100%
-		#header
-			background-image: url(/assets/bgdark.jpg)
-			background-repeat: repeat
-			width: 100%
-			height: 55px
-			position: fixed
-			color: white
-			font-size: 1.5em
-			text-align: center
-			#logo
-				display: inline-block
-				line-height: 2.5em
-				padding: 0 2.5em 
-				color: #bc3d2c
-				cursor: pointer
-			#login 
-				cursor: pointer
-			#border
-				background-image: url(/assets/border.gif)
-				height: 3px 
-				background-repeat: repeat
-				width: 100%
-				position: fixed
-				top: 55px
-		#body
-			height: 100%
-			width: 100%
-			background: rgb(246, 246, 246)
-			background-image: url(/assets/bgdark.jpg)
-			background-repeat: repeat
-svg 
-	float: right
-	display: none
-	.subunit.SCT
-		fill: #ddc
-	.subunit.WLS	
-		fill: #cdd
-	.subunit.NIR
-		fill: #cdc
-	.subunit.ENG
-		fill: #dcd
-	.subunit.IRL
-		display: none
-	.subunit-boundary
-		fill: none
-		stroke: #777
-		stroke-dasharray: 2,2
-		stroke-linejoin: round
-	.subunit-boundary.IRL
-		stroke: #aaa
-	.subunit-label
-		fill: #777
-		fill-opacity: .5
-		font-size: 20px
-		font-weight: 300
-		text-anchor: middle
+  height: 100%
+  margin: 0
+  font-family: "open sans"
+  *
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -o-box-sizing: border-box
+    -moz-box-sizing: border-box
+  #stage
+    height: 100%
+    width: 100%
+    padding-top: 50px
+    #header
+      width: 100%
+      margin-top: -50px
+      height: 50px
+      position: fixed
+      border-bottom: 1px solid #C50909
+      box-shadow: 0 1px 15px rgb(7, 0, 0)
+      ul 
+        margin: 0
+        padding-left: 15px
+        width: 100%
+        height: 100%
+        a 
+          text-decoration: none
+          color: red
+          font-family: "open sans"
+          font-weight: bold
+        li
+          display: inline-block
+          color: white
+          line-height: 50px
+        .left-side
+          width: 25%
+          float: left
+          span 
+            display: block
+          a 
+            text-decoration: none
+            font-family: "Pacifico"
+            font-weight: bold
+            font-size: 1.5em 
+            color: rgb(187, 66, 66)
+        .center:hover
+          .arrow_box
+            display: block
+        .center
+          width: 50%
+          text-align: center
+          float: left
+          position: relative
+          #page
+            display: block
+            color: #616161
+            cursor: pointer
+            font-size: 1.2rem
+          #page:hover
+            //border: solid 1px #ddd
+            //box-shadow: inset 0px 0px 10px 1px #ddd
+            width: 156px
+            margin: 0 auto
+            height: 49px
+            //border-radius: 10px
+          .arrow_box
+            position: absolute
+            background: #202020
+            opacity: .9
+            padding: 7px 7px
+            border-radius: 6px
+            left: auto
+            border: solid thin #202020
+            top: 49px
+            display: none
+            height: auto
+            li
+              display: block
+
+            li:hover
+              color: #E5E5E5
+              cursor: pointer
+              text-decoration: none
+              background-color: #303030
+              border-radius: 3px 
+              box-shadow: inset 0px 1px 1px #4c4c4c
+          .arrow_box:after, .arrow_box:before
+            bottom: 100%
+            border: solid transparent
+            content: " "
+            height: 0
+            width: 0
+            position: absolute
+            pointer-events: none
+          .arrow_box:after 
+            border-color: rgba(136, 183, 213, 0)
+            border-bottom-color: #202020
+            border-width: 10px
+            left: 50%
+            margin-left: -10px
+          .arrow_box:before
+            border-color: transparent transparent #202020 transparent
+            border-style: solid
+            border-width: 10px 
+            border-bottom-color: #202020
+            border-width: 10px
+            left: 50%
+            margin-left: -10px
+        .right-side
+          width: 25%
+          text-align: right
+          padding-right: 1.2em
+          span 
+            display: block
+            height: 100%
+            line-height: initial
+            padding: 5px
+          img 
+            height: 40px
+            border-radius: 26px
+
+      
+    .main 
+      height: 100%
+      width: 100%
+      background: rgb(241, 241, 241)
+      #block 
+        width: 80%
+        height: 80%
+        position: absolute
+        left: 10%
+        top: 80px
+        box-shadow: 0px 0px 10px 3px #A7A7A7
+        background: #FCFCFC
+        #heading
+          background-image: url(/assets/network.jpg)
+          height: 423px
+          background-repeat: no-repeat
+          background-size: 250px auto
+          background-position: center top
