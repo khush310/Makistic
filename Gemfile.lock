@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.com/
+  remote: http://rubygems.org/
   specs:
     addressable (2.3.5)
     catapult (0.0.4)
