@@ -28,5 +28,6 @@ M.app.bind "initialize:after", () =>
       else
         window.location.hash = "landing"
   )
- $(document).ready () ->
+
+$(document).ready () ->
   M.app.start()
