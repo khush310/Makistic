@@ -1,4 +1,4 @@
-source :rubygems
+source "http://rubygems.com"
 
 gem "rack"
 gem "catapult"
