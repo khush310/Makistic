@@ -35,6 +35,7 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
           <div id="fancount"></div>
         </div>
         <div id="fanlocation">
+          <h1></h1>
           Here's where they come from...
         </div>
         <div id="topfans">
@@ -74,37 +75,28 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     @showGraph()
 
   showGraph: () =>
-    d3.json "uk.json", (error, uk) ->
-      width = 960
-      height = 1160
-      svg = d3.select("body").append("svg").attr("width", width).attr("height", height)
-      subunits = topojson.feature(uk, uk.objects.subunits)
-      projection = d3.geo.albers().center([0, 55.4]).rotate([4.4, 0]).parallels([50, 60]).scale(6000).translate([width / 2, height / 2])
-      path = d3.geo.path().projection(projection)
-      svg.selectAll(".subunit").data(topojson.feature(uk, uk.objects.subunits).features).enter().append("path").attr("class", (d) ->
-        "subunit " + d.id
-      ).attr "d", path
-      svg.append("path").datum(topojson.mesh(uk, uk.objects.subunits, (a, b) ->
-        a isnt b and a.id isnt "IRL"
-      )).attr("d", path).attr "class", "subunit-boundary"
-      svg.append("path").datum(topojson.mesh(uk, uk.objects.subunits, (a, b) ->
-        a is b and a.id is "IRL"
-      )).attr("d", path).attr "class", "subunit-boundary IRL"
-      svg.append("path").datum(topojson.feature(uk, uk.objects.places)).attr("d", path).attr "class", "place"
-      svg.selectAll(".place-label").data(topojson.feature(uk, uk.objects.places).features).enter().append("text").attr("class", "place-label").attr("transform", (d) ->
-        "translate(" + projection(d.geometry.coordinates) + ")"
-      ).attr("dy", ".35em").text((d) ->
-        d.properties.name
-      ).attr("x", (d) ->
-        (if d.geometry.coordinates[0] > -1 then 6 else -6)
-      ).style "text-anchor", (d) ->
-        (if d.geometry.coordinates[0] > -1 then "start" else "end")
-
-      svg.selectAll(".subunit-label").data(topojson.feature(uk, uk.objects.subunits).features).enter().append("text").attr("class", (d) ->
-        "subunit-label " + d.id
-      ).attr("transform", (d) ->
-        "translate(" + path.centroid(d) + ")"
-      ).attr("dy", ".35em").text (d) ->
-        d.properties.name
+    width = 600
+    height = 400
+    projection = d3.geo.kavrayskiy7()
+    color = d3.scale.category20()
+    graticule = d3.geo.graticule()
+    path = d3.geo.path().projection(projection)
+    svg = d3.select("#block").append("svg").attr("width", width).attr("height", height)
+    d3.json "world.json", (error, world) ->
+      countries = topojson.feature(world, world.objects.countries).features
+      neighbors = topojson.neighbors(world.objects.countries.geometries)
+      svg.selectAll(".country")
+      .data(countries)
+      .enter()
+      .insert("path", ".graticule")
+      .attr("class", "country")
+      .attr("d", path)
+      .style("fill", (d, i) =>
+        color d.color = d3.max(neighbors[i], (n) =>
+          countries[n].color
+        ) + 1 | 0
+      ).on("click", (d) =>
+        console.log d
+      )
 
 

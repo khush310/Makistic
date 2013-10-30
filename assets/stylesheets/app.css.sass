@@ -10,31 +10,29 @@ body
     -webkit-box-sizing: border-box
     -o-box-sizing: border-box
     -moz-box-sizing: border-box
+  h1
+    position: absolute
+    top: 280px
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+    font-size: 18px
+    text-align: center
+    width: 960px
   svg 
-    float: right
-    .subunit.SCT
-      fill: #ddc
-    .subunit.WLS  
-      fill: #cdd
-    .subunit.NIR
-      fill: #cdc
-    .subunit.ENG
-      fill: #dcd
-    .subunit.IRL
-      display: none
-    .subunit-boundary
-      fill: none
-      stroke: #777
-      stroke-dasharray: 2,2
+    .country
+      fill: #ccc
+      stroke: #fff
+      stroke-width: .5px
       stroke-linejoin: round
-    .subunit-boundary.IRL
-      stroke: #aaa
-    .subunit-label
-      fill: #777
-      fill-opacity: .5
-      font-size: 20px
-      font-weight: 300
-      text-anchor: middle
+
+    .graticule
+      fill: none
+      stroke: #000
+      stroke-opacity: .3
+      stroke-width: .5px
+      &.outline
+        stroke: #333
+        stroke-opacity: 1
+        stroke-width: 1.5px
   #stage
     height: 100%
     width: 100%

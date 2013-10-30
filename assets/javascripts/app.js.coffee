@@ -5,6 +5,7 @@
 #= require ./prelude
 #= require ./lib/handlebars
 #= require ./lib/d3.v3.min
+#= require ./lib/queue.v1.min
 #= require ./lib/topojson.v1.min
 #= require_tree ./helpers
 #= require_tree ./routes
