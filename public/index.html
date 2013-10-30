@@ -16,46 +16,18 @@
 	<script src="assets/app.js"></script>
 </head>
 <body>
+  <script src="//connect.facebook.net/en_US/all.js"></script>
+  <div id="fb-root"></div>
+  <script>
+      FB.init({
+        appId      : '1381631812057512', // App ID
+        status     : true, // check login status
+        cookie     : true, // enable cookies to allow the server to access the session
+        xfbml      : true  // parse XFBML
+      });
+      // Additional initialization code here
+  </script>
 	<div id="stage">
-		<div id="header">
-			<ul>
-      	<li class="left-side">
-        	<span id="logo">
-          	<a href="#">makistic</a>
-        	</span>
-      	</li>
-      	<li class="center">
-          <span id="page">Select your page</span>
-          <ul class="arrow_box">
-          	<li>Blouse Art</li>
-          	<li>Bocconi Alumni</li>
-          </ul>
-      	</li>
-      	<li class="right-side">
-        	<span id="profileicon">
-        		<img src="/assets/profilepic.jpg">
-        	</span>
-      	</li>
-    	</ul>
-    </div>
-		<div class="main">
-			<div id="block">
-				<div id="title">
-					<div id="social"></div>
-          <div id="pagename">Social Life of</div>
-				</div>
-        <div id="fans">
-          Your page has 32400 fans!
-          <div id="male"></div>
-          <div id="female"></div>
-        </div>
-        <div id="fanlocation">
-          They come from here!
-        </div>
-        <div id="topfans">
-          Top 5 fans of your page are ...
-        </div>
-			</div>
-		</div>
+  </div>
 </body>
 </html>

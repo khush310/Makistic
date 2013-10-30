@@ -13,17 +13,17 @@ body
   #stage
     height: 100%
     width: 100%
-    padding-top: 50px
+    padding-top: 3rem
     #header
       width: 100%
-      margin-top: -50px
-      height: 50px
+      margin-top: -3rem
+      height: 3rem
       position: fixed
       border-bottom: 1px solid #C50909
       box-shadow: 0 1px 15px rgb(7, 0, 0)
       ul 
         margin: 0
-        padding-left: 15px
+        padding-left: 1rem
         width: 100%
         height: 100%
         a 
@@ -34,7 +34,7 @@ body
         li
           display: inline-block
           color: white
-          line-height: 50px
+          line-height: 3rem
         .left-side
           width: 25%
           float: left
@@ -44,7 +44,7 @@ body
             text-decoration: none
             font-family: "Pacifico"
             font-weight: bold
-            font-size: 2em 
+            font-size: 1.5rem 
             color: rgb(187, 66, 66)
         .center:hover
           .arrow_box
@@ -58,14 +58,11 @@ body
             display: block
             color: #616161
             cursor: pointer
-            font-size: 1.2rem
+            font-size: 1.1rem
           #page:hover
-            //border: solid 1px #ddd
-            //box-shadow: inset 0px 0px 10px 1px #ddd
             width: 156px
             margin: 0 auto
-            height: 49px
-            //border-radius: 10px
+            height: 3rem
           .arrow_box
             position: absolute
             background: #202020
@@ -74,7 +71,7 @@ body
             border-radius: 6px
             left: auto
             border: solid thin #202020
-            top: 49px
+            top: 3rem
             display: none
             height: auto
             li
@@ -112,22 +109,22 @@ body
         .right-side
           width: 25%
           text-align: right
-          padding-right: 1.2em
+          padding-right: 1rem
           span 
             display: block
             height: 100%
             line-height: initial
-            padding: 5px
+            padding: 5px 0 
           img 
-            height: 40px
-            border-radius: 26px
+            height: 2.5rem
+            border-radius: 1.3rem
     .main 
       height: 100%
       width: 100%
       background: rgb(241, 241, 241)
-      padding-top: 30px
+      padding-top: 1.8rem
       #block 
-        width: 90%
+        width: 600px
         height: 95%
         overflow-y: scroll
         margin: 0 auto
@@ -135,7 +132,7 @@ body
         background: #FCFCFC
         text-align: center
         #title
-          background-position: 10px 20px
+          background-position: 14px 24px
           background-image: url(/assets/border.png)
           background-repeat: no-repeat
           background-size: 300px auto
@@ -147,8 +144,8 @@ body
             font-size: 3em
             width: 50%
             float: left
-            padding-top: 150px
-            padding-left: 15px
+            padding-top: 156px
+            padding-left: 35px
             text-align: right
           #social 
             background-image: url(/assets/speech-bubble.png)
@@ -156,14 +153,15 @@ body
             height: 100%
             width: 50%
             background-size: auto 80%
+            background-position: center center
             float: right
+            padding-top: 6rem
+            font-size: 2rem
+            font-family: "montserrat alternates" 
         #fans
-          height: 250px 
-          //text-align: right
+          height: 250px
           padding-left: 60px
-          //padding-right: 80px
-          font-family: "unkempt"
-          font-size: 2em
+          padding-top: 70px
           #male 
             background-image: url(/assets/male.png)
             background-repeat: no-repeat
@@ -179,18 +177,32 @@ body
             height: 170px
             width: 111px
             float: left
+          #fantext
+            font-family: "unkempt"
+            font-size: 2em
+            height: 100px
         #fanlocation
           height: 350px
           background-image: url(/assets/World_map_green.png)
           background-repeat: no-repeat
           background-size: 480px auto
-          background-position: top right
+          background-position: bottom center
           text-align: left
-          padding-left: 30px
+          padding-left: 130px
           font-family: "Unkempt"
           font-size: 1.5em
-          padding-top: 100px
+          padding-top: 20px
         #topfans
           height: 300px
           font-family: "Unkempt"
-          font-size: 3em
+          font-size: 2em
+          padding-top: 70px
+          padding-left: 50px
+          #fan1, #fan2, #fan3, #fan4, #fan5
+            background-image: url(/assets/topfans.png)
+            background-size: 90px auto
+            float: left
+            height: 99px
+            width: 90px
+            
+          
