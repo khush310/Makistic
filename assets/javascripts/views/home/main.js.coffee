@@ -29,10 +29,10 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     <div class="main">
       <div id="block">
         <div id="title"></div>
+        <div id="filler">Here are a few basic stats about this page </div>
         <div id="fans">
-          <div id="male"></div>
-          <div id="female"></div>
           <div id="fancount"></div>
+          <div id="gencount"></div>
         </div>
         <div id="fanlocation">
           <h1></h1>
@@ -52,6 +52,7 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
   regions:  
     titleRegion: '#title'
     fancountRegion: '#fancount'
+    fangencountRegion: '#gencount'
   events:
     "click .arrow_box li": "showPage"
 
@@ -72,31 +73,49 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
       fancountView = new M.Views.Fans.Count {model: model}
       @fancountRegion.show fancountView
 
+    FB.api "/#{page_id}/insights/page_fans_gender_age", (resp) =>
+      model = new Backbone.Model resp
+      console.log resp
+      fangencountView = new M.Views.Fans.Gencount {model: model}
+      @fangencountRegion.show fangencountView
+    
     @showGraph()
 
   showGraph: () =>
-    width = 600
-    height = 400
-    projection = d3.geo.kavrayskiy7()
+    width = 550
+    height = 600
+
+    # TODO change this projection to something like remittances
+    projection = d3.geo.projection(d3.geo.hammer.raw(1.75, 2))
+    .rotate([-10, -45])
+    .scale(180)
+    #projection = d3.geo.winkel3()
+    projection.translate([width/2, height/2])
+    # check d3 documentation about scales
     color = d3.scale.category20()
-    graticule = d3.geo.graticule()
-    path = d3.geo.path().projection(projection)
-    svg = d3.select("#block").append("svg").attr("width", width).attr("height", height)
-    d3.json "world.json", (error, world) ->
-      countries = topojson.feature(world, world.objects.countries).features
-      neighbors = topojson.neighbors(world.objects.countries.geometries)
+
+    # let's create a path
+    path = d3.geo.path()
+    .projection(projection)
+
+    #let's append a svg in #block
+    svg = d3.select("#block").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+
+    d3.json "world-countries.json", (error, world) =>
+      console.log world
+      countries = world.features
       svg.selectAll(".country")
       .data(countries)
-      .enter()
-      .insert("path", ".graticule")
+      .enter().insert("path", ".graticule")
       .attr("class", "country")
       .attr("d", path)
-      .style("fill", (d, i) =>
-        color d.color = d3.max(neighbors[i], (n) =>
-          countries[n].color
-        ) + 1 | 0
-      ).on("click", (d) =>
-        console.log d
+      .on(
+        "click", 
+        (d) => 
+          @showCountryData(d.id)
       )
 
-
+  showCountryData: (country_id) =>
+    console.log country_id
