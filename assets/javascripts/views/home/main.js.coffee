@@ -35,9 +35,7 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
           <div id="gencount"></div>
         </div>
         <div class="filler">here's where they come from</div>
-        <div id="fanlocation">
-          <h1></h1>
-        </div>
+        <div id="fanlocation"></div>
         <div id="topfans">
           Top 5 fans of your page are ...
           <div id="fan1"></div>
@@ -99,7 +97,7 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     .projection(projection)
 
     #let's append a svg in #block
-    svg = d3.select("#block").append("svg")
+    svg = d3.select("#fanlocation").append("svg")
     .attr("width", width)
     .attr("height", height)
 
