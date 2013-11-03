@@ -7,6 +7,13 @@ body
     -webkit-box-sizing: border-box
     -o-box-sizing: border-box
     -moz-box-sizing: border-box
+  .chart div
+    font: 10px sans-serif
+    background-color: pink
+    text-align: right
+    padding: 3px
+    margin: 1px
+    color: white
   h1
     position: absolute
     top: 280px
@@ -16,16 +23,16 @@ body
     width: 960px
   #stage
     width: 100%
-    padding-top: 3rem
+    padding-top: 4rem
     #header
       width: 100%
-      margin-top: -3rem
-      height: 3rem
+      margin-top: -4rem
+      height: 4rem
       position: fixed
       border-bottom: 1px solid #C50909
-      box-shadow: 0 1px 15px rgb(7, 0, 0)
+      box-shadow: 0 1px 15px #070000
       z-index: 500
-      background: rgb(235, 235, 235)
+      background: #D5D4C6
       ul 
         margin: 0
         padding-left: 1rem
@@ -39,7 +46,7 @@ body
         li
           display: inline-block
           color: white
-          line-height: 3rem
+          line-height: 4rem
         .left-side
           width: 25%
           float: left
@@ -49,8 +56,8 @@ body
             text-decoration: none
             font-family: "Pacifico"
             font-weight: bold
-            font-size: 1.5rem 
-            color: rgb(187, 66, 66)
+            font-size: 2rem 
+            color: #bb4242
         .center:hover
           .arrow_box
             display: block
@@ -63,11 +70,11 @@ body
             display: block
             color: #616161
             cursor: pointer
-            font-size: 1.1rem
+            font-size: 1.5rem
           #page:hover
             width: 156px
             margin: 0 auto
-            height: 3rem
+            height: 4rem
           .arrow_box
             position: absolute
             background: #202020
@@ -76,12 +83,11 @@ body
             border-radius: 6px
             left: auto
             border: solid thin #202020
-            top: 3rem
+            top: 4rem
             display: none
             height: auto
             li
               display: block
-
             li:hover
               color: #E5E5E5
               cursor: pointer
@@ -125,15 +131,15 @@ body
             border-radius: 1.3rem
     .main 
       width: 100%
-      background: #f1f1f1
+      background: #8C826B
       padding-top: 1.8rem
       position: absolute
       overflow-y: scroll
       #block 
         width: 900px
         margin: 0 auto
-        box-shadow: 0px 0px 10px 3px #A7A7A7
-        background: rgb(238, 239, 239)
+        box-shadow: 0px 0px 10px 3px #111111
+        background: #3D3C33
         text-align: center
         z-index: 600
         #title, #titleView
@@ -155,20 +161,23 @@ body
             -webkit-transform: rotate(6deg)
             padding: 150px 85px
             text-align: center
+            color: indianred
           #pagename
             font-family: "Unkempt"
             font-size: 4em
+            color: #F2F0CE
             width: 40%
             float: left
             padding-top: 156px
             padding-left: 85px
             text-align: center
             -webkit-transform: rotate(-15deg)
-        #filler
-          height: 2.5rem
+        .filler
+          height: 5rem
           background: indianred
           font-family: "Annie Use Your Telescope"
-          font-size: 1.6rem
+          font-size: 1.8rem
+          line-height: 5rem
         #fans
           height: 700px
           margin-top: 80px
@@ -208,9 +217,10 @@ body
               background-repeat: no-repeat
               background-position: top center
               height: 240px
-              width: 111px
+              width: 116px
               float: left
               margin-top: 30px 
+              margin-left: 15px
               padding: 137px 0 0 10px 
               font-family: "Annie Use Your Telescope"
               font-size: 3.5rem

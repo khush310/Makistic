@@ -29,14 +29,14 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     <div class="main">
       <div id="block">
         <div id="title"></div>
-        <div id="filler">Here are a few basic stats about this page </div>
+        <div class="filler">Here are a few basic stats about this page </div>
         <div id="fans">
           <div id="fancount"></div>
           <div id="gencount"></div>
         </div>
+        <div class="filler">here's where they come from</div>
         <div id="fanlocation">
           <h1></h1>
-          Here's where they come from...
         </div>
         <div id="topfans">
           Top 5 fans of your page are ...
@@ -79,9 +79,9 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
       fangencountView = new M.Views.Fans.Gencount {model: model}
       @fangencountRegion.show fangencountView
     
-    @showGraph()
-
-  showGraph: () =>
+    @showMap()
+    
+  showMap: () =>
     width = 550
     height = 600
 
