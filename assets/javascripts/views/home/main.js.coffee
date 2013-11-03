@@ -36,14 +36,6 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
         </div>
         <div class="filler">here's where they come from</div>
         <div id="fanlocation"></div>
-        <div id="topfans">
-          Top 5 fans of your page are ...
-          <div id="fan1"></div>
-          <div id="fan2"></div>
-          <div id="fan3"></div>
-          <div id="fan4"></div>
-          <div id="fan5"></div>
-        </div>
       </div>
     </div>
   """
