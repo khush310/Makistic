@@ -1,0 +1,106 @@
+#fans
+  height: 700px
+  margin-top: 80px
+  #fancount
+    height: 330px
+    background-image: url(/assets/network.jpg)
+    background-size: 63% auto
+    margin: 0 auto
+    border: 12px solid black
+    font-weight: 200
+    font-size: 2.5em
+    width: 90%
+    text-align: center
+    #fancountView p 
+      margin-top: 10px
+  #gencount, #gencountView 
+    height: 200px
+    margin-top: 60px
+    margin-top: 80px
+    font-size: 1.5rem
+    font-weight: 200
+    #male 
+      background-image: url(/assets/male.png)
+      background-repeat: no-repeat
+      height: 240px
+      width: 116px
+      padding-left: 15px
+      background-position: top center
+      padding-top: 140px
+      font-family: "Annie Use Your Telescope"
+      font-size: 3.5rem
+      color: indianred
+      margin-top: 25px
+    #female
+      background-image: url(/assets/female.png)
+      background-repeat: no-repeat
+      background-position: top center
+      height: 240px
+      width: 116px
+      margin-top: 30px 
+      padding: 137px 0 0 10px 
+      font-family: "Annie Use Your Telescope"
+      font-size: 3.5rem
+      color: indianred
+#fanlocation
+  height: 650px
+  text-align: left
+  padding-left: 180px
+  padding-top: 20px
+  svg 
+    .country
+      stroke-width: .5px
+      stroke-linejoin: round
+    .country:hover
+      opacity: 0.7
+#topfans
+  height: 300px
+  font-family: "Unkempt"
+  font-size: 2em
+  padding-top: 70px
+  padding-left: 50px
+  #fan1, #fan2, #fan3, #fan4, #fan5
+    background-image: url(/assets/topfans.png)
+    background-size: 90px auto
+    float: left
+    height: 99px
+    width: 90px
+#gencountView 
+  padding: 0 150px 0 150px
+  #male
+    margin-left: -120px
+    float: left
+  #female
+    margin-right: -120px
+    float: right
+  .chart
+    width: 100%
+    height: 100%
+    float: left
+.chart
+  .age:first-child
+    div
+      margin-left: auto !important
+      background-color: rgb(66, 175, 236)
+      span
+        display: none
+  .age
+    width: 45%
+    display: inline-block
+    height: 100%
+    div
+      min-width: 70px
+      height: 25px
+      background: pink
+      margin-top: 9px
+      position: relative
+      span 
+        display: inline-block
+        background-color: rgba(255,255,255,0.19)
+        position: absolute
+        left: -20px
+        width: 40px
+        height: 25px
+        line-height: 25px
+        font-size: 0.8em
+        font-family: "Annie Use Your Telescope"

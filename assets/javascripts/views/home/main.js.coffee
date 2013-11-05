@@ -81,9 +81,8 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     ranges = _(data).values()
     upper_bound = _(ranges).max()
     lower_bound = _(ranges).min()
-    console.log "upper bound is #{upper_bound} and lower_bound is #{lower_bound} "
 
-    scale = d3.scale.pow().exponent(1/7).domain([lower_bound, upper_bound]).interpolate(d3.interpolateRgb).range(["#FFFFFF", "#6CB312"]).clamp(true)
+    scale = d3.scale.pow().exponent(1/4).domain([lower_bound, upper_bound]).interpolate(d3.interpolateRgb).range(["#87CEFA", "#0000CD"]).clamp(true)
 
     # TODO change this projection to something like remittances
     projection = d3.geo.projection(d3.geo.hammer.raw(1.75, 2))
@@ -98,6 +97,7 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     .projection(projection)
 
     #let's append a svg in #block
+    $("#fanlocation").html("")
     svg = d3.select("#fanlocation").append("svg")
     .attr("width", width)
     .attr("height", height)
@@ -115,12 +115,12 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
         if country
           value = data[country.cca2]
           if value is undefined
-            "white" 
+            "antiquewhite" 
           else
             scale(value)
             # ready = () =>
         else
-          "white"
+          "antiquewhite"
       ).on(
         "click", 
         (d) => 
@@ -133,5 +133,5 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
 
   showCountryData: (data) =>
     model = new Backbone.Model data
-    #view = new 
-    #@graphDeatilsRegion.show
+    countrydataView = new M.Views.Map {model: model}
+    @mapRegion.show countrydataView
