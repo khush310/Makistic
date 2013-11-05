@@ -22,5 +22,6 @@ class M.AppRouter extends Backbone.Router
         model = new Backbone.Model resp
         homeView = new M.Views.Home.Main({model: model})
         M.app.stageRegion.show homeView
+        console.log resp
     )
 		

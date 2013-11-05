@@ -29,12 +29,12 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     <div class="main">
       <div id="block">
         <div id="title"></div>
-        <div class="filler">Here are a few basic stats about this page </div>
+        <div class="filler"><p>Here are a few basic stats about this page</p></div>
         <div id="fans">
           <div id="fancount"></div>
           <div id="gencount"></div>
         </div>
-        <div class="filler">here's where they come from</div>
+        <div class="filler"><p>Here's where they come from</p></div>
         <div id="fanlocation"></div>
       </div>
     </div>
@@ -49,7 +49,6 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
 
 
   showPage: (e) =>
-    console.log e
     $li = $(e.currentTarget)
     page_id = $li.attr("data-id")
     @current_page_id = page_id
@@ -60,13 +59,11 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
 
     FB.api "/#{page_id}/insights/page_fans", (resp) =>
       model = new Backbone.Model resp
-      console.log resp
       fancountView = new M.Views.Fans.Count {model: model}
       @fancountRegion.show fancountView
 
     FB.api "/#{page_id}/insights/page_fans_gender_age", (resp) =>
       model = new Backbone.Model resp
-      console.log resp
       fangencountView = new M.Views.Fans.Gencount {model: model}
       @fangencountRegion.show fangencountView
     
@@ -106,7 +103,6 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
     .attr("height", height)
 
     d3.json "world-countries.json", (error, world) =>
-      console.log world
       countries = world.features
       svg.selectAll(".country")
       .data(countries)
@@ -118,11 +114,9 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
         country = _(dictionary).findWhere({ cca3: three_digit })
         if country
           value = data[country.cca2]
-          console.log value
           if value is undefined
             "white" 
           else
-            console.log scale(value)
             scale(value)
             # ready = () =>
         else
@@ -138,7 +132,6 @@ class M.Views.Home.Main extends Backbone.Marionette.Layout
       )
 
   showCountryData: (data) =>
-    console.log data
     model = new Backbone.Model data
     #view = new 
     #@graphDeatilsRegion.show
