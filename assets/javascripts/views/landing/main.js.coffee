@@ -3,10 +3,13 @@
 M.provide "Views.Landing", {}
 
 class M.Views.Landing.Main extends Backbone.Marionette.ItemView
-
-	template: """
+  type: "ItemView"
+  id: "landing"
+  
+  template: """
     <div id="matisticlogin">
       <p> matistic </p>
-      <a id="button" href="#login" type="submit"> Login with Facebook </a>
+      <p id="login"> <a id="button" href="#login" type="submit"> Login with Facebook </a> </p>
     </div>
-	"""
+  """
+

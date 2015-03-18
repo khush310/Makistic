@@ -4,11 +4,9 @@ class M.Views.Fans.Gencount extends Backbone.Marionette.ItemView
   type: "itemview"
   id: "gencountView"
   template: """
-    checking if text works
+    out of which most of the fans are {{majority_fan data}}
     <div id="male">{{fan_male_count data}}%</div>
-    <div class="chart">
-
-    </div>
+    <div class="chart"></div>
     <div id="female">{{fan_female_count data}}%</div>
   """
 

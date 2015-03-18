@@ -2,6 +2,21 @@ Handlebars.registerHelper "fan_count_for_today", (resp) =>
   data = resp[0]
   _(data.values).last().value
 
+Handlebars.registerHelper "majority_fan", (resp) =>
+  data = resp[0]
+  last_value = _(data.values).last() 
+  count_male = 0
+  count_female = 0
+
+  _(last_value.value).each (value, key, list) =>
+    if key[0] is "M"
+      count_male = count_male + value
+    else if key[0] is "F"
+      count_female = count_female + value
+  if count_female > count_male
+    "female"
+  else "male"
+
 Handlebars.registerHelper "fan_male_count", (resp) =>
   data = resp[0]
 
